@@ -24,7 +24,7 @@ while not connect4.game_over:
         except (ValueError, GameplayException):
             print('invalid move')
     except KeyboardInterrupt:
-        print('\nGra została przerwana.')
+        print('\nThe game has been interrupted.')
         sys.exit()
 
 connect4.draw()
