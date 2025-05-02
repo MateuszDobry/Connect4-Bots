@@ -4,7 +4,7 @@ from randomagent import RandomAgent
 from MinMaxHeuristic import MinMaxHeuristicAgent
 from MinMaxAgent import MinMaxAgent
 from AlphaBetaAgent import AlphaBetaAgent
-import sys  # Importuj moduł sys, aby użyć sys.exit()
+import sys 
 
 connect4 = Connect4(width=7, height=6)
 agent = AlphaBetaAgent('x')
@@ -27,9 +27,9 @@ while not connect4.game_over:
         connect4.drop_token(n_column)
     except KeyboardInterrupt:
         print('\nGra została przerwana.')
-        sys.exit()  # Zakończ program
+        sys.exit()  
     except GameplayException:
         print('Nieprawidłowy ruch.')
 
 connect4.draw()
-sys.exit()  # Zakończ program po zakończeniu gry
+sys.exit()  
