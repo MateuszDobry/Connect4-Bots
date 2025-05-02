@@ -10,8 +10,14 @@ from AlphaBetaAgent import AlphaBetaAgent
 
 
 connect4 = Connect4(width=7, height=6)
-agent1 = AlphaBetaAgent('o')
-agent2 = MinMaxHeuristicAgent('x')
+
+# Here you can change the bots to the ones you want to play , and their tokens
+agent1 = AlphaBetaAgent('x')
+agent2 = MinMaxHeuristicAgent('o')
+
+if agent1.my_token == agent2.my_token:
+    print('\nBots must have different tokens.')
+    sys.exit()
 while not connect4.game_over:
     connect4.draw()
     try:
