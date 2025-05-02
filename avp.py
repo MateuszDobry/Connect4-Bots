@@ -17,19 +17,19 @@ while not connect4.game_over:
         else:
             while True:
                 try:
-                    n_column = int(input('Wprowadź numer kolumny (0-6): '))
+                    n_column = int(input('enter column number (0-6): '))
                     if n_column < 0 or n_column >= connect4.width:
-                        raise ValueError("Numer kolumny musi być w zakresie 0-6.")
+                        raise ValueError("Column number must be in the range 0-6.")
                     break
                 except ValueError as e:
                     print(e)
-                    print('Spróbuj ponownie.')
+                    print('Try again.')
         connect4.drop_token(n_column)
     except KeyboardInterrupt:
-        print('\nGra została przerwana.')
+        print('\nThe game has been interrupted.')
         sys.exit()  
     except GameplayException:
-        print('Nieprawidłowy ruch.')
+        print('Invalid move.')
 
 connect4.draw()
 sys.exit()  
