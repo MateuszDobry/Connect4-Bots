@@ -3,7 +3,7 @@ from connect4 import Connect4
 from randomagent import RandomAgent
 from MinMaxHeuristic import MinMaxHeuristicAgent
 from MinMaxAgent import MinMaxAgent
-from alphabetaagent import AlphaBetaAgent
+from AlphaBetaAgent import AlphaBetaAgent
 
 
 connect4 = Connect4(width=7, height=6)
