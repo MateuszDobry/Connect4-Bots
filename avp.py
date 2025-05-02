@@ -8,7 +8,6 @@ from alphabetaagent import AlphaBetaAgent
 
 connect4 = Connect4(width=7, height=6)
 agent = MinMaxAgent('x')
-agent2 = MinMaxHeuristicAgent('o')
 while not connect4.game_over:
     connect4.draw()
     try:
