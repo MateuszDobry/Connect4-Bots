@@ -1,3 +1,5 @@
+import sys
+
 from exceptions import GameplayException
 from connect4 import Connect4
 from randomagent import RandomAgent
@@ -13,12 +15,16 @@ agent2 = MinMaxHeuristicAgent('x')
 while not connect4.game_over:
     connect4.draw()
     try:
-        if connect4.who_moves == agent1.my_token:
-            n_column = agent1.decide(connect4)
-        else:
-            n_column = agent2.decide(connect4)
-        connect4.drop_token(n_column)
-    except (ValueError, GameplayException):
-        print('invalid move')
+        try:
+            if connect4.who_moves == agent1.my_token:
+                n_column = agent1.decide(connect4)
+            else:
+                n_column = agent2.decide(connect4)
+            connect4.drop_token(n_column)
+        except (ValueError, GameplayException):
+            print('invalid move')
+    except KeyboardInterrupt:
+        print('\nGra została przerwana.')
+        sys.exit()
 
 connect4.draw()
